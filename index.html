@@ -24,8 +24,10 @@
 
         .navbar {
             background-color: rgb(205, 235, 247);
-            justify-content: center;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.2); /* Added bottom border */
+            justify-content: space-between;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+            padding: 0 15px;
+            /* Added left and right padding */
         }
 
         .navbar-brand {
@@ -102,19 +104,68 @@
             text-decoration: underline;
             color: #0056b3;
         }
+
+        /* Popup styles */
+        #download-popup,
+        #info-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar with centered title -->
+    <!-- Navbar with hamburger menu -->
     <nav class="navbar">
-        <div class="container-fluid d-flex justify-content-center">
-            <a class="navbar-brand" href="#">
-                <u>Bharat Socials</u>
-            </a>
-        </div>
+        <a class="navbar-brand" href="#">
+            <u>Bharat Socials</u>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </nav>
+
+    <!-- Sidebar (Offcanvas) -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+        style="width: 70%;">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Bharat Socials</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                <p>Bharat Socials serves as a bridge between NGOs and college students from Placeholder University. It
+                    allows volunteers to engage in various channels related to social causes like education, women's
+                    empowerment, health, and environmental issues. NGOs can post their events, and volunteers can easily
+                    track their attendance and participation.</p>
+            </div>
+            <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Developers
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Nirrav Sawla</a></li>
+                    <li><a class="dropdown-item" href="#">Saurabh Phadtare</a></li>
+                    <li><a class="dropdown-item" href="#">Asmit Vishwakarma</a></li>
+                    <li><a class="dropdown-item" href="#">Ankit Prajapati</a></li>
+                    <li><a class="dropdown-item" href="#">Anaya Powar</a></li>
+                    <li><a class="dropdown-item" href="#">Ayush Pandey</a></li>
+                    <li><a class="dropdown-item" href="#">Viraj Panchal</a></li>
+                </ul>
+            </div>
+   
+        </div>
+    </div>
 
     <!-- Main Content -->
     <div class="content">
@@ -126,29 +177,24 @@
 
             <!-- Description -->
             <p class="lead mt-3">
-                Bharat Socials is a platform where government-registered NGOs collaborate with Placeholder University
-                and connect to the NSS (National Service Scheme) of various colleges.
-                Volunteers can join broadcast channels based on domains such as Sarva Shiksha Abhiyan, Women
-                Empowerment, Health & Hygiene, and Environmental Conservation. NGOs can post events, and volunteers can
-                bookmark them. NGOs can track volunteer attendance.
+                Bharat Socials connects NGOs with Placeholder University and NSS. Volunteers can join channels for
+                education, women’s empowerment, health, and the environment, while NGOs can post events and track
+                attendance.
             </p>
 
             <!-- Download Button -->
-            <a href="app-release.apk" class="btn btn-success download-btn" download>Download App</a>
+            <button id="download-button" class="btn btn-success download-btn">Download App</button>
+
+            <!-- Popup -->
+            <div id="download-popup">
+                <p>Your download will start soon...</p>
+                <button onclick="closePopup('download-popup')">Close</button>
+            </div>
+
+
 
             <!-- Table Title -->
             <div class="table-title">By DEVCLUB-TRCAC</div>
-
-            <!-- Developer List -->
-            <ul class="list-group mt-3">
-                <li class="list-group-item">Nirrav Sawla</li>
-                <li class="list-group-item">Saurabh Phadtare</li>
-                <li class="list-group-item">Asmit Vishwakarma</li>
-                <li class="list-group-item">Ankit Prajapati</li>
-                <li class="list-group-item">Anaya Powar</li>
-                <li class="list-group-item">Ayush Pandey</li>
-                <li class="list-group-item">Viraj Panchal</li>
-            </ul>
         </div>
     </div>
 
@@ -166,6 +212,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById('download-button').onclick = function () {
+            // Show the download popup
+            document.getElementById('download-popup').style.display = 'block';
+            // Start the download after a brief delay
+            setTimeout(function () {
+                window.location.href = 'app-release.apk'; // Start the download
+            }, 2000); // Adjust delay as needed
+        };
+
+        document.getElementById('info-button').onclick = function () {
+            // Show the info popup
+            document.getElementById('info-popup').style.display = 'block';
+        };
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none'; // Close the popup
+        }
+    </script>
 </body>
 
 </html>
