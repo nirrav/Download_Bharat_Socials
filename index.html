@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Socials</title>
+    <link rel="shortcut icon" href="app_icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('appbackground.png');
+            background-size: cover;
+            background-position: center;
+            color: black;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgb(205, 235, 247);
+            justify-content: center;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.2); /* Added bottom border */
+        }
+
+        .navbar-brand {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background-color: lightgray;
+            border-radius: 20px;
+            margin: 0 auto;
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.097);
+            border-radius: 10px;
+            backdrop-filter: blur(3px);
+        }
+
+        .download-btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-top: 20px;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .download-btn:active {
+            transform: scale(0.95);
+            background-color: #4CAF50;
+        }
+
+        .table-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: rgb(205, 235, 247);
+            backdrop-filter: blur(10px);
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar with centered title -->
+    <nav class="navbar">
+        <div class="container-fluid d-flex justify-content-center">
+            <a class="navbar-brand" href="#">
+                <u>Bharat Socials</u>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="text-center">
+            <!-- App Icon -->
+            <div class="app-icon">
+                <img src="app_icon.png" alt="App Icon">
+            </div>
+
+            <!-- Description -->
+            <p class="lead mt-3">
+                Bharat Socials is a platform where government-registered NGOs collaborate with Placeholder University
+                and connect to the NSS (National Service Scheme) of various colleges.
+                Volunteers can join broadcast channels based on domains such as Sarva Shiksha Abhiyan, Women
+                Empowerment, Health & Hygiene, and Environmental Conservation. NGOs can post events, and volunteers can
+                bookmark them. NGOs can track volunteer attendance.
+            </p>
+
+            <!-- Download Button -->
+            <a href="app-release.apk" class="btn btn-success download-btn" download>Download App</a>
+
+            <!-- Table Title -->
+            <div class="table-title">By DEVCLUB-TRCAC</div>
+
+            <!-- Developer List -->
+            <ul class="list-group mt-3">
+                <li class="list-group-item">Nirrav Sawla</li>
+                <li class="list-group-item">Saurabh Phadtare</li>
+                <li class="list-group-item">Asmit Vishwakarma</li>
+                <li class="list-group-item">Ankit Prajapati</li>
+                <li class="list-group-item">Anaya Powar</li>
+                <li class="list-group-item">Ayush Pandey</li>
+                <li class="list-group-item">Viraj Panchal</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Presented by DEVCLUB of Thakur Ramnarayan College of Arts and Commerce</p>
+        <p>Version 1.2</p>
+        <p>
+            <a href="https://www.trcac.org.in/">Visit our College</a> |
+            <a href="mailto:bharatsocials24@gmail.com">Contact Us</a>
+        </p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
